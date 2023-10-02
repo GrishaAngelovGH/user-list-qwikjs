@@ -1,9 +1,15 @@
-import { component$, Slot } from "@builder.io/qwik";
+import { component$, Slot, useStyles$ } from "@builder.io/qwik";
 
-export default component$(() => (
-  <>
-    <main>
-      <Slot />
-    </main>
-  </>
-))
+import bootstrapStyles from "./node_modules/bootstrap/dist/css/bootstrap.min.css?inline";
+
+export default component$(() => {
+  useStyles$(bootstrapStyles)
+
+  return (
+    <>
+      <main>
+        <Slot />
+      </main>
+    </>
+  )
+})
