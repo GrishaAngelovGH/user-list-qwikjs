@@ -1,5 +1,7 @@
 import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 
+import User from "~/components/user/user";
+
 interface User {
   id: string;
   name: string;
@@ -29,15 +31,17 @@ export default component$(() => {
 
   return (
     <>
-      <h1>Users</h1>
-      {
-        store.users.map(v => (
-          <div key={v.id}>
-            <h3>ID: {v.id}</h3>
-            <h3>Name: {v.name}</h3>
-          </div>
-        ))
-      }
+      <h1 class="text-center m-0">Users</h1>
+
+      <div class="row g-0 justify-content-center">
+        <div class="col-md-5">
+          {
+            store.users.map(v => (
+              <User key={v.id} id={v.id} name={v.name} />
+            ))
+          }
+        </div>
+      </div>
     </>
   )
 })
