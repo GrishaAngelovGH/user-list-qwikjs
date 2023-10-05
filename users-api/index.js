@@ -27,6 +27,20 @@ app.get('/users', (req, res) => {
   res.json(users)
 })
 
+app.get('/tasks', (req, res) => {
+  const tasks = []
+
+  for (let i = 0; i < 5; i++) {
+    tasks.push({
+      id: Math.random().toString().slice(2),
+      title: `Task ${i + 1}`,
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    })
+  }
+
+  res.json(tasks)
+})
+
 app.listen(port, () => {
   console.log(`the server is listening on port ${port}`)
 })

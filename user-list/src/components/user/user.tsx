@@ -7,7 +7,7 @@ export default component$((props: { id: string, name: string }) => {
 
   return (
     <div class="row g-0 mt-2 align-items-center border border-3 shadow rounded p-1">
-      <div class="col-md-2">
+      <div class="col-3 col-lg-2">
         <img src={image} class="rounded" width={80} height={80} />
       </div>
       <div class="col-md-6">
