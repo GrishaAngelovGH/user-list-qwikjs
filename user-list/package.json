@@ -2,7 +2,7 @@
   "name": "my-qwik-basic-starter",
   "description": "Demo App with Routing built-in (recommended)",
   "engines": {
-    "node": ">=15.0.0"
+    "node": "20.x"
   },
   "private": true,
   "trustedDependencies": [
@@ -31,7 +31,7 @@
     "@types/node": "^20.4.5",
     "@typescript-eslint/eslint-plugin": "6.2.0",
     "@typescript-eslint/parser": "6.2.0",
-    "eslint": "8.45.0",
+    "eslint": "8.56.0",
     "eslint-plugin-qwik": "^1.2.13",
     "prettier": "3.0.0",
     "typescript": "5.1.6",
