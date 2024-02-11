@@ -1,4 +1,4 @@
-import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useStore, useTask$ } from "@builder.io/qwik";
 
 interface Task {
   id: string;
@@ -9,7 +9,7 @@ interface Task {
 export default component$(() => {
   const store = useStore({ tasks: [] as Task[] })
 
-  useVisibleTask$(async () => {
+  useTask$(async () => {
     try {
       const res = await fetch("http://localhost:3100/tasks")
       const tasks = await res.json()

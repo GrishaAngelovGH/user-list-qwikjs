@@ -1,4 +1,4 @@
-import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useStore, useTask$ } from "@builder.io/qwik";
 
 import User from "~/components/user/user";
 
@@ -10,15 +10,9 @@ interface User {
 export default component$(() => {
   const store = useStore({ users: [] as User[] })
 
-  /*
-    Sometimes a task needs to run only on the browser and after rendering,
-    in that case, you should use useVisibleTask$().
-    The useVisibleTask$() is similar to useTask$() but it only runs on the browser
-    and after initial rendering. useVisibleTask$() registers a hook to be executed
-    when the component becomes visible in the viewport, it will run at least once in the browser,
-    and it can be reactive and re-execute when some tracked state changes.
-  */
-  useVisibleTask$(async () => {
+  // - useTask$ is commonly used for performing work on component initialization or when a state changes.
+
+  useTask$(async () => {
     try {
       const res = await fetch("http://localhost:3100/users")
       const users = await res.json()
